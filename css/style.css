@@ -1,0 +1,234 @@
+	/*02全局选择器 margin和padding*/
+*{
+	margin:0;
+	padding: 0;
+}
+@font-face {font-family: 'iconfont';
+    src: url('../img/font/iconfont.eot'); 
+    src: url('../img/font/iconfont.eot') format('embedded-opentype'),
+    url('../img/font/iconfont.woff') format('woff'),
+    url('../img/font/iconfont.ttf') format('truetype'),
+    url('../img/font/iconfont.svg#iconfont') format('svg');
+}
+/*03列表样式：无*/
+ul{
+	list-style: none;
+}
+a:link,a:visited{
+	text-decoration: none;
+	color:#333;
+}
+/*04body字体和颜色*/
+body{
+	font-family: "微软雅黑";
+	color: #1419e;
+}
+/*05div.main样式*/
+.main{
+
+	width: 1200px;
+	height: 460px;
+	margin: 30px ;
+	overflow: hidden;
+	/*通过显示和隐藏来实现的切换*/
+	/*如果没有overflow:hidden,图片排列就是从下到上排列的*/
+	position:relative;
+
+} 
+/*07banner样式*/
+.banner{
+	width: 1200px;
+	height: 460px;
+	overflow:hidden;
+	position:relative; 
+}
+/*09公共类名的样式 全部隐藏 位置 背景重复吗？ 显示当前页面 */
+.banner-slide{
+	width: 1200px;
+	height: 460px;
+	position:absolution;
+	background-repeat: no-repeat;
+	display: none;
+	
+	/*不平铺*/
+	
+}
+
+.slide-active{
+	display:block;
+}
+/*10给每个不同类加背景图*/
+.slide1{
+	background-image: url("../img/bg1.jpg");
+    
+}
+.slide2{
+	background-image: url("../img/bg2.jpg");
+    
+}
+.slide3{
+	background-image: url("../img/bg3.jpg");
+    
+}
+/*13.给类button绝对定位的同时要给他的父标签相对定位*/
+/*14给左箭头居中定位  加个背景图*/
+/**/
+.button{
+	position:absolute;
+	width:40px;
+    height: 80px;
+    left: 244px;
+    top:50%;
+    margin-top: -40px;
+    background:  url(../img/arrow.png) no-repeat center center;
+
+}
+/*17鼠标滑过这个a标签的话有个半透明度*/
+.button:hover{
+	/*18给一个背景颜色*/
+	background-color: #333;
+	opacity: 0.8;
+	filter:alpha(opacity=80);
+}
+
+/*16前一张按钮旋转180度*/
+.prev{
+	transform:rotate(180deg);
+
+}
+/*15给右箭头定位*/
+.next{
+	left:auto;
+	right:0;
+}
+/*19div.dots位置 */
+.dots{
+	position: absolute;
+	right: 0;
+	bottom: 24px;
+	text-align: right;
+}
+/*20设置小圆点属性*/
+.dots span{
+	display: inline-block;
+	width: 12px;
+	height: 12px;
+	line-height: 12px;
+	border-radius: 50%;
+	/*背景色是 半透明的灰色*/
+	background: rgba(7,17,27,0.4);
+	margin-left: 8px;
+	box-shadow: 0 0 0 2px rgba(255,255,255,0.8)inset;
+	cursor: pointer;
+
+}
+/*21设置当前小圆点背景色和阴影*/
+.dots span.active{
+	box-shadow: 0 0 0 2px rgba(7,17,27,0.4) inset;
+	background: #fff;
+}
+/*38.导航菜单*/
+.menu-box{
+	width: 244px;
+	height: 460px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	background: rgba(7,17,27,0.5);
+	opacity: 0.5;
+	z-index: 1;
+}
+/*40 menu-content样式*/
+.menu-content{
+	width: 244px;
+	height: 454px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 2;
+	padding-top: 6px;
+}
+/*42.四个主菜单样式*/
+.menu-item{
+	height: 64px;
+	line-height: 66px;
+	font-size: 16px;
+	padding: 0 24px;
+	position: relative;
+	
+}
+/*43.鼠标未访问状态与鼠标已经访问状态都是白色*/
+.menu-item a:link,.menu-item a:visited{
+	color: fff;
+}
+/*44.把边框定义在a标签上*/
+.menu-item a{
+	display: block;
+	color: #fff;
+	padding: 0 8px;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+	height: 63px;
+	font-size:16px;
+}
+/*45定义字体*/
+/*46.定义右侧小箭头*/
+.menu-item i{
+	position: absolute;
+	right: 32px;
+	font-size: 24px;
+	top: 2px;
+	font-family: "iconfont";
+	font-weight: normal;
+	font-style: normal;
+	color: rgba(255,255,255,0.5);
+}
+/*48.子菜单 div.sub-menu*/
+.sub-menu{
+	width: 730px;
+	height: 458px;
+	border: 1px solid #d9dde1;
+	background: #fff;
+	position: absolute;
+	left: 244px;
+	top:0;
+	z-index: 999;
+	box-shadow: 0 4px 8px 0 rgab(0,0,0.1);
+}
+/*49.小子菜单inner-box样式加背景图*/
+.inner-box{
+	width: 100%;
+	height: 100%;
+	background: url(../img/fe.png) no-repeat;
+}
+/*51.孙结点放内容sub-inner-box*/
+.sub-inner-box{
+	width: 652px;
+	margin-left: 40px;
+	overflow: hidden;
+}
+/*53.孙节点标题样式*/
+.title{
+	color: #f01414;
+	font-size: 16px;
+	line-height: 16px;
+	margin: 28px 0 30px 0;
+	font-weight: bold;
+
+}
+/*55.加粗*/
+.bold{
+	font-weight: bold;
+}
+/*56*/
+.mr10{
+	margin-right: 10px;
+}
+.ml10{
+	margin-left: 10px;
+}
+.sub-row{
+	margin-bottom: 25px;
+}
+.hide{
+	display: none; 
+}
